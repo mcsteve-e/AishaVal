@@ -193,3 +193,143 @@ a{
     text-decoration: none;
     color: rgb(243, 214, 214);
 }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    body {
+        overflow-y: auto; /* Allow vertical scroll */
+        overflow-x: hidden;
+        height: auto; /* Allow body to grow with content */
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Adjust heading font size */
+        margin: 2rem auto 1rem; /* Center h1 with auto margins */
+        text-align: center;
+        flex-direction: column; /* Stack "Would you like to" and "DATE me?" */
+        align-items: center;
+    }
+
+    .red {
+        font-size: 2.2rem; /* Adjust .red span font size */
+        display: block; /* Make it block to ensure it's on its own line if needed */
+        margin-top: 0.25rem;
+    }
+
+    img {
+        position: relative; /* Change from absolute */
+        top: auto;
+        left: auto;
+        transform: none;
+        max-width: 70%; /* Make image responsive */
+        height: auto; /* Maintain aspect ratio */
+        display: block; /* For centering with margin */
+        margin: 1rem auto; /* Center image */
+    }
+
+    .content {
+        /* This div already exists, we can use it to group image and buttons */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .buttons {
+        margin-top: 1rem; /* Reduce margin */
+        padding-top: 0.5rem;
+        gap: 1.5rem; /* Reduce gap */
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap; /* Allow buttons to wrap if needed */
+    }
+
+    .btn {
+        position: relative; /* Change from absolute/top-based positioning */
+        top: auto;
+        font-size: 1rem; /* Adjust button font size */
+        min-width: 100px;
+        padding: 0.6rem 1rem;
+        margin: 0.5rem; /* Add some margin for wrapped buttons */
+    }
+
+    .watermark {
+        position: relative; /* Change from fixed to relative */
+        text-align: center;
+        width: 100%;
+        padding: 1rem 0;
+        font-size: 0.9rem;
+        margin-top: 2rem;
+        color: rgb(220, 220, 220); /* Ensure visibility on dark bg */
+    }
+
+    a {
+       color: rgb(220, 220, 220); /* Match watermark */
+    }
+
+    /* Adjust wrapper spans for smaller screens if they become too dense */
+    .wrapper span {
+        height: 30px;
+        width: 30px;
+    }
+    .wrapper span:nth-child(4), .wrapper span:nth-child(7), .wrapper span:nth-child(9) {
+        height: 40px; /* Slightly larger ones */
+        width: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem;
+        margin: 1.5rem auto 0.5rem;
+    }
+
+    .red {
+        font-size: 1.8rem;
+    }
+
+    img {
+        max-width: 80%;
+    }
+
+    .buttons {
+        gap: 1rem;
+        flex-direction: column; /* Stack buttons */
+        align-items: center;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        min-width: 150px; /* Ensure buttons are decently wide when stacked */
+        width: 70%;
+        text-align: center;
+        padding: 0.5rem;
+        margin: 0.3rem auto;
+    }
+
+    #yes:hover:before {
+        content:"I know <3"; /* Shorter for small screens */
+    }
+    #no:hover:before {
+        content:"Pls 🥺"; /* Shorter for small screens */
+    }
+
+    .watermark {
+        font-size: 0.8rem;
+        margin-top: 1.5rem;
+    }
+
+    .wrapper span { /* Make animations less prominent on very small screens */
+        height: 20px;
+        width: 20px;
+        box-shadow: 0 0 20px #0072ff, 0 0 40px #0072ff, 0 0 60px #0072ff, 0 0 80px #0072ff; /* Reduce shadow */
+    }
+    .wrapper span:nth-child(1) { box-shadow: 0 0 20px #7938ce, 0 0 40px #500d90, 0 0 60px #b320e8, 0 0 80px #6838ce; }
+    .wrapper span:nth-child(3) { box-shadow: 0 0 20px #e21212, 0 0 40px #9ae657, 0 0 60px #57e4e6, 0 0 80px #e657da; }
+    .wrapper span:nth-child(4) { box-shadow: 0 0 20px #e21212, 0 0 40px #e63544, 0 0 60px #e6576a, 0 0 80px #ed748a; width: 30px; height: 30px; }
+    .wrapper span:nth-child(5) { box-shadow: 0 0 20px #ec3b3b, 0 0 40px #e6b657, 0 0 60px #e657da, 0 0 80px #e657da; }
+    .wrapper span:nth-child(7) { box-shadow: 0 0 20px #e21212, 0 0 40px #e657da, 0 0 60px #e657da, 0 0 80px #e657da; width: 40px; height: 40px; }
+    .wrapper span:nth-child(8) { box-shadow: 0 0 20px #113cc8, 0 0 40px #7f57e6, 0 0 60px #2958d9, 0 0 80px #34569f; }
+    .wrapper span:nth-child(10) { box-shadow: 0 0 20px #e657da, 0 0 40px #e657da, 0 0 60px #e657da, 0 0 80px #e657da; }
+
+}

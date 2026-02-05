@@ -36,3 +36,43 @@ a{
     text-decoration: none;
     color: black;
 }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .center {
+        width: 90%; /* Prevent overflow on smaller screens */
+    }
+
+    .btn {
+        font-size: 18px; /* Adjust button font size */
+        padding: 8px 15px; /* Add some padding */
+    }
+
+    .watermark {
+        position: relative; /* Change from fixed to relative */
+        text-align: center;
+        width: 100%;
+        padding: 1rem 0;
+        font-size: 0.9rem;
+        color: #333; /* Ensure visibility if background is light */
+        top: auto;   /* Reset fixed positioning */
+        left: auto;  /* Reset fixed positioning */
+        margin-top: 2rem; /* Add some space if content pushes it down */
+    }
+
+    a {
+        color: #333; /* Match watermark color */
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        font-size: 16px; /* Further adjust button font size */
+        padding: 6px 12px; /* Further adjust padding */
+    }
+
+    .watermark {
+        font-size: 0.8rem;
+        margin-top: 1.5rem;
+    }
+}

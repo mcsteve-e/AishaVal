@@ -92,3 +92,121 @@ a{
     text-decoration: none;
     color: black;
 }
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    body {
+        overflow-y: auto; /* Allow vertical scroll */
+        overflow-x: hidden;
+        height: auto; /* Allow body to grow with content */
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Adjust heading font size */
+        margin: 2rem 0 1rem;
+        text-align: center;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    img {
+        position: relative; /* Change from absolute */
+        top: auto;
+        left: auto;
+        transform: none;
+        max-width: 80%; /* Make image responsive */
+        height: auto; /* Maintain aspect ratio */
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        order: 1; /* Control order if needed */
+    }
+
+    .buttons {
+        font-size: 24px; /* Adjust button font size */
+        margin-top: 1rem; /* Reduce margin */
+        gap: 2rem; /* Reduce gap */
+        width: 100%;
+        justify-content: center;
+        order: 2;
+        padding-top: 0;
+    }
+
+    .buttons button {
+        padding: 0.5rem 1rem;
+    }
+
+    /* Repositioning romantic buttons for smaller screens */
+    /* A simple flex layout for demonstration. Could be more complex. */
+    .romantic1, .romantic2, .romantic3, .romantic4, .romantic5, .romantic6, .romantic7 {
+        position: relative; /* Change from absolute */
+        top: auto;
+        left: auto;
+        transform: none;
+        margin: 0.5rem; /* Add some spacing */
+        padding: 0.5rem 0.8rem;
+        font-size: 0.9rem;
+        order: 3; /* After main image and buttons */
+    }
+
+    /* Optional: Stack them or arrange in a grid for smaller screens */
+    /* For this example, they will just flow based on the flex container of .content */
+
+    .watermark {
+        position: relative; /* Change from fixed to relative */
+        text-align: center;
+        width: 100%;
+        padding: 1rem 0;
+        font-size: 0.9rem;
+        color: #333;
+        top: auto;
+        left: auto;
+        margin-top: 2rem;
+        order: 4; /* Ensure watermark is last */
+    }
+
+    a {
+        color: #333;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+        margin: 1rem 0 0.5rem;
+    }
+
+    img {
+        max-width: 90%;
+    }
+
+    .buttons {
+        font-size: 18px;
+        gap: 1rem;
+        flex-direction: column; /* Stack main buttons */
+        align-items: center;
+    }
+
+    .buttons button {
+        width: 70%;
+        text-align: center;
+    }
+
+    .romantic1, .romantic2, .romantic3, .romantic4, .romantic5, .romantic6, .romantic7 {
+        font-size: 0.8rem;
+        width: 60%; /* Make romantic buttons take more width */
+        text-align: center;
+        margin: 0.3rem auto; /* Center them when stacked */
+    }
+
+    .watermark {
+        font-size: 0.8rem;
+        margin-top: 1.5rem;
+    }
+}

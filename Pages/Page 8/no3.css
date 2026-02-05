@@ -127,3 +127,134 @@ a{
     text-decoration: none;
     color: rgb(243, 214, 214);
 }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    body {
+        overflow-y: auto; /* Allow vertical scroll */
+        overflow-x: hidden;
+        height: auto; /* Allow body to grow with content */
+        padding: 1rem;
+    }
+
+    .circle {
+        width: 15px; /* Slightly smaller circles */
+        /* Their animation is vertical and left is random based on innerWidth, so mostly okay */
+    }
+
+    h1 {
+        font-size: 1.6rem; /* Adjust heading font size */
+        margin: 2rem auto 1rem;
+        text-align: center;
+        flex-wrap: wrap; /* Allow h1 content to wrap */
+        justify-content: center;
+        line-height: 1.4;
+    }
+
+    .red {
+        font-size: 2rem; /* Adjust .red span font size */
+    }
+    .red b { /* Specifically target b inside .red if needed */
+        font-size: inherit; /* Inherit from .red or set specific if different */
+    }
+
+
+    img#image { /* More specific selector for the image */
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        max-width: 60%;
+        height: auto;
+        display: block;
+        margin: 1rem auto; /* Center image */
+        z-index: 100; /* Keep z-index if needed for overlap with circles */
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .buttons {
+        margin-top: 1rem; /* Reduce margin */
+        padding-top: 0.5rem;
+        gap: 1rem; /* Reduce gap */
+        width: 100%;
+        justify-content: center;
+        flex-direction: column; /* Stack buttons */
+        align-items: center;
+    }
+
+    .btn {
+        position: relative; /* Reset from the complex 'top' calculation */
+        top: auto;
+        left: auto; /* Ensure JS controls left for #yes button */
+        bottom: auto; /* Ensure JS controls bottom for #yes button */
+        font-size: 1rem;
+        min-width: 150px; /* Decent width for touch */
+        padding: 0.6rem 1rem;
+        margin: 0.5rem;
+        width: 70%; /* Make buttons take up good portion of stacked width */
+        text-align: center;
+    }
+
+    #yes {
+        /* Styles for #yes are mostly controlled by JS for position */
+        /* Ensure it's not overly large initially */
+         width: 60%; /* Initial width before JS moves it */
+         max-width: 200px;
+    }
+
+
+    #no:hover:before {
+        content:"Uff Girls 😑"; /* Slightly shorter */
+    }
+
+    .watermark {
+        position: relative;
+        text-align: center;
+        width: 100%;
+        padding: 1rem 0;
+        font-size: 0.9rem;
+        margin-top: 2rem;
+        color: rgb(220, 220, 220);
+    }
+
+    a {
+       color: rgb(220, 220, 220);
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.3rem;
+        margin: 1.5rem auto 0.5rem;
+    }
+
+    .red {
+        font-size: 1.7rem;
+    }
+
+    img#image {
+        max-width: 70%;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        min-width: 130px;
+        padding: 0.5rem 0.8rem;
+        width: 80%;
+    }
+    #yes {
+         width: 70%;
+         max-width: 180px;
+    }
+
+
+    .watermark {
+        font-size: 0.8rem;
+        margin-top: 1.5rem;
+    }
+}

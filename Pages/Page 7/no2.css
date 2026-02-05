@@ -49,3 +49,69 @@ section .btn{
     text-decoration: none;
     color: rgb(243, 214, 214);
 }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    section {
+        padding: 1rem; /* Add padding to the section */
+        /* min-height: 100vh is okay if content fits; otherwise, allow scrolling */
+        /* overflow: hidden; might be needed if any child absolutely positioned elements go astray */
+    }
+
+    section h2 {
+        font-size: 2.5em; /* Reduce h2 font size */
+        text-align: center; /* Center the heading text */
+    }
+
+    section h2 span {
+        display: block; /* Make span a block to ensure it can break line if needed */
+        margin-top: 0.25em;
+    }
+
+    section .btn {
+        margin: 2rem auto 0; /* Remove huge margins, auto horizontal margins for centering */
+        font-size: 1.2rem; /* Reduce button font size */
+        display: block; /* Make button block for centering with margin auto */
+        width: fit-content; /* Adjust width to content */
+        padding: 0.75rem 1.5rem; /* Add reasonable padding */
+    }
+
+    .watermark {
+        position: relative; /* Change from fixed to relative */
+        text-align: center;
+        width: 100%;
+        padding: 1rem 0;
+        font-size: 0.9rem;
+        margin-top: 2rem; /* Add space if section doesn't fill viewport */
+        color: rgb(220, 220, 220); /* Ensure visibility with dark bg or invert filter */
+    }
+
+    .watermark a {
+       color: rgb(220, 220, 220);
+    }
+
+    /* Adjust light effect for smaller screens if it's too strong, though it's mostly aesthetic */
+    .light {
+        background: radial-gradient(circle at var(--x) var(--y) , transparent 5%, rgba(0,0,0,0.90) 15%);
+    }
+}
+
+@media (max-width: 480px) {
+    section h2 {
+        font-size: 1.8em;
+    }
+
+    section .btn {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+        margin-top: 1.5rem;
+    }
+
+    .watermark {
+        font-size: 0.8rem;
+        margin-top: 1.5rem;
+    }
+    .light { /* Make spotlight softer on very small screens */
+        background: radial-gradient(circle at var(--x) var(--y) , transparent 3%, rgba(0,0,0,0.85) 12%);
+    }
+}

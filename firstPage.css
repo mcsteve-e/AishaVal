@@ -63,3 +63,67 @@ a{
     text-decoration: none;
     color: rgb(238, 203, 203);
 }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem; /* Reduce padding for smaller screens */
+    }
+
+    .container {
+        max-width: 90%; /* Allow container to use more width */
+    }
+
+    #image {
+        max-width: 80%; /* Ensure image scales down */
+        height: auto;
+    }
+
+    .btn {
+        position: relative; /* Change from absolute to relative for better flow */
+        top: auto; /* Reset top positioning */
+        margin-top: 2rem; /* Add some space above the button */
+        font-size: 1rem; /* Adjust font size for smaller screens */
+        min-width: 100px; /* Adjust min-width */
+        padding: 0.5rem 0.75rem; /* Adjust padding */
+    }
+
+    .btn:hover:before {
+        content:"Hiiiii \1F49E "; /* Shorter text for smaller buttons */
+    }
+
+    .watermark {
+        position: relative; /* Change from fixed to relative */
+        top: auto; /* Reset top positioning */
+        left: auto; /* Reset left positioning */
+        text-align: center; /* Center the watermark text */
+        margin-top: 2rem; /* Add space above watermark */
+        width: 100%;
+        opacity: 0.7;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0.5rem;
+    }
+
+    #image {
+        max-width: 90%;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.6rem;
+        margin-top: 1.5rem;
+    }
+
+    .btn:hover:before {
+        content:"Hi \1F49E "; /* Even shorter text */
+    }
+
+    .watermark {
+        font-size: 0.8rem;
+        margin-top: 1.5rem;
+    }
+}

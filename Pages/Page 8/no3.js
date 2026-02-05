@@ -47,15 +47,33 @@ setInterval(function(){
     lines();
 }, 200);
 
-const maxWidth = 650;
-const maxHeight = 600;
+// const maxWidth = 650; // Will be dynamic now
+// const maxHeight = 600; // Will be dynamic now
 
 window.addEventListener('DOMContentLoaded', () =>{
-    const button = document.getElementById('yes')
+    const button = document.getElementById('yes');
+
+    // Ensure button has some dimensions before trying to read them
+    // These are fallback values if offsetWidth/Height are 0 initially.
+    const buttonWidth = button.offsetWidth || 150;
+    const buttonHeight = button.offsetHeight || 50;
 
     button.addEventListener('mouseover', () => {
-        button.style.left = Math.floor(Math.random() * (maxWidth + 1)) + 'px';
-        button.style.bottom = Math.floor(Math.random() * (maxHeight + 1)) + 'px';
+        // Calculate maximum coordinates based on viewport and button size
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+
+        // Max random position should ensure the button stays fully within view
+        const maxRandomX = viewportWidth - buttonWidth;
+        const maxRandomY = viewportHeight - buttonHeight;
+
+        // Ensure maxRandomX/Y are not negative if button is larger than viewport (unlikely for this button)
+        const targetX = Math.floor(Math.random() * Math.max(0, maxRandomX));
+        const targetY = Math.floor(Math.random() * Math.max(0, maxRandomY));
+
+        button.style.position = 'absolute'; // Ensure it's absolutely positioned for left/bottom to work
+        button.style.left = targetX + 'px';
+        button.style.bottom = targetY + 'px'; // Using bottom; could use top as well
     });
 });
 

@@ -174,6 +174,109 @@
   }
 }
 
+/* Responsive Adjustments for Blobs */
+@media (max-width: 768px) {
+  /* Reduce size of all blobs */
+  #up1, #up2, #up3, #up4, #up5, #up6, #down {
+    /* Scale down fixed sizes, e.g., by 50-60% */
+    /* This is a general adjustment; specific ones might be needed */
+    transform-origin: center center; /* Ensure scaling is from center */
+  }
+
+  #up1 { width: 150px; height: 150px; }
+  #up2 { width: 50px; height: 50px; }
+  #up3 { width: 100px; height: 70px; }
+  #up4 { width: 200px; height: 180px; }
+  #up5 { width: 180px; height: 200px; }
+  #up6 { width: 130px; height: 160px; }
+  #down { width: 250px; height: 250px; }
+
+
+  /* Adjusting keyframe translations - this is approximate */
+  /* Goal is to reduce the travel distance */
+
+  @-webkit-keyframes up1 {
+    from { transform: translate(50px, -70px) rotate(-90deg) scale(0.6); border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%; }
+    to { transform: translate(100px, -120px) rotate(-30deg) scale(0.6); border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%; }
+  }
+  @keyframes up1 {
+    from { transform: translate(50px, -70px) rotate(-90deg) scale(0.6); border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%; }
+    to { transform: translate(100px, -120px) rotate(-30deg) scale(0.6); border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%; }
+  }
+
+  @-webkit-keyframes up2 {
+    from { transform: translate(-100px, 70px) rotate(90deg) scale(0.6); border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%; }
+    to { transform: translate(-200px, 70px) rotate(-30deg) scale(0.6); border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%; }
+  }
+  @keyframes up2 { /* Original had different values for webkit and standard */
+    from { transform: translate(100px, -5px) rotate(-90deg) scale(0.6); border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%; }
+    to { transform: translate(50px, -200px) rotate(-30deg) scale(0.6); border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%; }
+  }
+
+  @-webkit-keyframes up3 {
+    from { transform: translate(-15px, -300px) rotate(-90deg) scale(0.6); border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%; }
+    to { transform: translate(-13px, -200px) rotate(90deg) scale(0.6); border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%; }
+  }
+  @keyframes up3 {
+    from { transform: translate(-15px, -300px) rotate(-90deg) scale(0.6); border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%; }
+    to { transform: translate(-13px, -200px) rotate(90deg) scale(0.6); border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%; }
+  }
+
+  @-webkit-keyframes up4 {
+    from { transform: translate(-40px, -10px) rotate(-90deg) scale(0.6); border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%; }
+    to { transform: translate(100px, -400px) rotate(-40deg) scale(0.6); border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%; }
+  }
+  @keyframes up4 {
+    from { transform: translate(-40px, -10px) rotate(-90deg) scale(0.6); border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%; }
+    to { transform: translate(100px, -400px) rotate(-40deg) scale(0.6); border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%; }
+  }
+
+  @-webkit-keyframes up5 {
+    from { transform: translate(2px, 50px) rotate(-90deg) scale(0.6); border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%; }
+    to { transform: translate(5px, -250px) rotate(-30deg) scale(0.6); border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%; }
+  }
+  @keyframes up5 {
+    from { transform: translate(2px, 50px) rotate(-90deg) scale(0.6); border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%; }
+    to { transform: translate(5px, -250px) rotate(-30deg) scale(0.6); border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%; }
+  }
+
+  @-webkit-keyframes up6 {
+    from { transform: translate(-150px, -300px) rotate(-90deg) scale(0.6); border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%; }
+    to { transform: translate(-120px, -15px) rotate(-30deg) scale(0.6); border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%; }
+  }
+  @keyframes up6 {
+    from { transform: translate(-150px, -300px) rotate(-90deg) scale(0.6); border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%; }
+    to { transform: translate(-120px, -15px) rotate(-30deg) scale(0.6); border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%; }
+  }
+
+  /* The #down blob is positioned within .buttons which is now flex column. */
+  /* Its animation might need specific review based on how it looks. */
+  /* For now, just scaling it down with the general rule. */
+   @-webkit-keyframes down {
+    from { transform: translate(5%, -25%) rotate(-90deg) scale(0.6); border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%; }
+    to { transform: translate(5%, -25%) rotate(90deg) scale(0.6); border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%; }
+  }
+  @keyframes down {
+    from { transform: translate(5%, -25%) rotate(-90deg) scale(0.6); border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%; }
+    to { transform: translate(5%, -25%) rotate(90deg) scale(0.6); border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%; }
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further reduce blob sizes for very small screens */
+  #up1 { width: 100px; height: 100px; }
+  #up2 { width: 30px; height: 30px; } /* Smallest blob even smaller */
+  #up3 { width: 70px; height: 50px; }
+  #up4 { width: 150px; height: 130px; }
+  #up5 { width: 130px; height: 150px; }
+  #up6 { width: 90px; height: 120px; }
+  #down { width: 180px; height: 180px; }
+
+  /* Keyframes could be further adjusted here if needed, but for now, rely on smaller base size + scaled transforms */
+  /* Example: further reduce scale in transforms if they are still too large */
+  /* @keyframes up1 { from { ... scale(0.4); } to { ... scale(0.4); } } */
+}
+
 @keyframes up1 {
   from {
     transform: translate(150px, -150px) rotate(-90deg);

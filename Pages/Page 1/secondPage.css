@@ -143,3 +143,99 @@ a{
     text-decoration: none;
     color: rgb(238, 203, 203);
 }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    * {
+        overflow-x: hidden; /* Allow vertical scroll, prevent horizontal */
+    }
+
+    body {
+        overflow-x: hidden; /* Ensure body also prevents horizontal scroll */
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Adjust h1 font size */
+        padding: 0 1rem 0; /* Adjust padding */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Adjust h2 font size */
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 1rem; /* Adjust h3 font size */
+        text-align: center;
+    }
+
+    .beauti, .gorg, .wow {
+        font-size: 1.8rem; /* Adjust animated text font size */
+        -webkit-text-stroke: 2px darkmagenta; /* Thinner stroke */
+    }
+
+    #beauti, #gorg, #wow {
+        padding: 1rem 0.5rem; /* Adjust padding for these sections */
+        text-align: center; /* Center all animated text sections */
+    }
+
+    #wow {
+        text-align: center; /* Override specific right alignment */
+    }
+
+    .btn {
+        font-size: 0.9rem; /* Adjust button font size */
+        padding: 0.5rem 1rem; /* Adjust button padding */
+    }
+
+    #center {
+        margin: 2rem 0; /* Adjust margin for the centered button container */
+    }
+
+    .watermark {
+        position: relative; /* Change from fixed to relative */
+        top: auto;
+        left: auto;
+        text-align: center;
+        width: 100%;
+        padding: 1rem 0;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    h3 {
+        font-size: 0.9rem;
+    }
+
+    .beauti, .gorg, .wow {
+        font-size: 1.3rem; /* Further adjust animated text */
+        -webkit-text-stroke: 1.5px darkmagenta;
+    }
+
+    .beauti::before, .gorg::before, .wow::before {
+        border-right-width: 4px; /* Adjust border for smaller text */
+    }
+
+
+    .btn {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+     #center {
+        margin: 1.5rem 0;
+    }
+
+    .watermark {
+        font-size: 0.8rem;
+        padding: 0.5rem 0;
+    }
+}

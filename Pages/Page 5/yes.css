@@ -79,3 +79,77 @@ a{
     text-decoration: none;
     color: black;
 }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        /* Keep overflow: hidden for the heart animation effect */
+        /* position: absolute, top: 0, left: 0, width: 100% are fine for full-screen effect */
+        /* height: 100vh might be okay if this page is purely visual, but ensure no vital content is clipped */
+        display: flex;
+        flex-direction: column; /* Stack image and text */
+        justify-content: center;
+        align-items: center;
+        padding: 1rem; /* Add some padding */
+    }
+
+    img {
+        padding-right: 0; /* Remove fixed padding */
+        max-width: 50%; /* Scale image */
+        height: auto;
+        margin-bottom: 1rem; /* Space between image and text */
+    }
+
+    h1 {
+        font-size: 2.5em; /* Reduce font size */
+        /* z-index is fine */
+    }
+
+    .heart {
+        width: 30px; /* Slightly smaller base hearts */
+        height: 30px;
+        /* box-shadows might need to be toned down if performance is an issue, but let's keep for now */
+    }
+
+    .watermark {
+        position: relative; /* Change from fixed to relative */
+        text-align: center;
+        width: 100%;
+        padding: 1rem 0;
+        font-size: 0.9rem;
+        color: #333; /* Ensure visibility */
+        background-color: rgba(232, 2, 2, 0.8); /* Match page bg but slightly transparent */
+        /* This will appear at the bottom of the flow if .container allows scrolling, */
+        /* or might overlay if .container is strictly 100vh and overflow:hidden */
+        /* For this page, fixed at bottom might be better if container is truly full screen */
+        position: fixed; /* Revert to fixed if container is strictly full screen visual */
+        bottom: 0;
+        left: 0;
+        opacity: 0.7;
+        padding: 0.5rem;
+        color: white;
+    }
+
+    a {
+       color: white; /* Match watermark text color */
+    }
+}
+
+@media (max-width: 480px) {
+    img {
+        max-width: 60%;
+    }
+
+    h1 {
+        font-size: 1.8em; /* Further reduce font size */
+    }
+
+    .heart {
+        width: 20px;
+        height: 20px;
+    }
+     .watermark {
+        font-size: 0.7rem;
+        padding: 0.3rem;
+    }
+}
