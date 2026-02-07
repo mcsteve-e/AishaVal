@@ -162,7 +162,7 @@ img{
 }
   
 #yes:hover:before {   
-    content:"I know 💖";
+    content:"omg YAY 💖";
 }
 
 body.yess {
@@ -174,7 +174,7 @@ body.yess {
 }
 
 #no:hover:before {
-    content:"Please 🥺";
+    content:"as how? 🥺";
 }
 
 body.noo {
