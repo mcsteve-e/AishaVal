@@ -96,6 +96,7 @@ h1{
     color: darkmagenta;
     border-right: 8px solid darkmagenta;
     animation: slidein infinite 1.5s;
+    animation-direction: reverse;
 }
 .gorg::before{
     content: "magnet";
@@ -106,7 +107,6 @@ h1{
     color: darkmagenta;
     border-right: 8px solid darkmagenta;
     animation: slidein infinite 1.5s;
-    animation-direction: reverse;
 }
 .wow::before{
     content: "Agege bread!!!!!!";
@@ -117,6 +117,7 @@ h1{
     color: darkmagenta;
     border-right: 8px solid darkmagenta;
     animation: slidein infinite 1.5s;
+    animation-direction: reverse;
 }
 
 @keyframes slidein {
