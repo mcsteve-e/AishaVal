@@ -88,7 +88,7 @@ h1{
 }
 
 .beauti::before{
-    content: "forever lobster 🦞";
+    content: "forever lobster";
     position: absolute;
     width: 0%;
     height: 100%;
@@ -99,7 +99,7 @@ h1{
     animation-direction: reverse;
 }
 .gorg::before{
-    content: "magnet 🧲";
+    content: "magnet";
     position: absolute;
     width: 0%;
     height: 100%;
@@ -109,7 +109,7 @@ h1{
     animation: slidein infinite 1.5s;
 }
 .wow::before{
-    content: "Agege bread 🍞!!!!!!";
+    content: "Agege bread!!!!!!";
     position: absolute;
     width: 0%;
     height: 100%;
